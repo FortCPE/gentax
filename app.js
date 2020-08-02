@@ -13,6 +13,7 @@ con.connect(function(err) {
   console.log("[Gentax] Connecting to Database...");
   console.log("[Gentax] Connected")
 });
+const port = process.env.PORT || 3000
 app.use(express.json())
 app.use(cors())
 
@@ -496,6 +497,6 @@ app.post('/api/business/delete', (req,res) => {
   });
 })
 // -------------------------------------------- จบ API บริษัท --------------------------------------------------//
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log('[Gentax] Running Server...')
 })
