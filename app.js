@@ -19,6 +19,10 @@ app.use(cors())
 // -------------------------------------------- เริ่ม API สินค้า --------------------------------------------------//
 // การจัดการ STOCK API -----------------------------------------------------------------------------------------------------
 //ทำการ GET ข้อมูล สินค้า ทั้งหมด
+app.get('/', (req,res) => {
+  res.send("Running...")
+})
+
 app.get('/api/stock/all', (req,res) => {
   var sql = "SELECT * FROM stocks JOIN types ON stocks.stock_type = types.type_id JOIN units ON stocks.stock_unit = units.unit_id";
   var query = con.query(sql, function (err, result){
